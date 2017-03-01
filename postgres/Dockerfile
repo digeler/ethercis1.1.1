@@ -23,7 +23,7 @@ RUN apt-get update && apt-get install -y \
 	&& cd .. \
 	&& rm -rf temporal_tables \
 # Install jsquery extension
-  && git clone https://github.com/postgrespro/jsquery \
+  && git clone https://github.com/DidacMC/jsquery.git --branch patch-1 \
   && cd jsquery \
 	&& make USE_PGXS=1 \
 	&& make install USE_PGXS=1 \
@@ -43,3 +43,5 @@ RUN apt-get update && apt-get install -y \
 COPY ./scripts ./scripts
 COPY ./01_db_creation.sh ./docker-entrypoint-initdb.d/01_db_creation.sh
 COPY ./02_db_init.sh ./docker-entrypoint-initdb.d/02_db_init.sh
+
+EXPOSE 5432
