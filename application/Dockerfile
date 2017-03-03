@@ -48,6 +48,6 @@ WORKDIR /opt/ecis/bin
 # Then proceed to populate database and start server
 # Output server log to console
 CMD ./wait-for-it.sh postgres:5432 -t 60 && \
-  ./populate-concept.sh && \
-  ./ecis-server.sh start && 
-
+  ./populate-concept.sh && \  
+  ./ecis-server.sh start && \
+  tail -f /var/opt/ecis/ethercis_test.log
