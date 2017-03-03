@@ -49,5 +49,5 @@ WORKDIR /opt/ecis/bin
 # Output server log to console
 CMD ./wait-for-it.sh postgres:5432 -t 60 && \
   ./populate-concept.sh && \
-  ./ecis-server.sh start && \
+  ./ecis-server.sh start && 
 
