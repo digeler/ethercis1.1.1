@@ -15,7 +15,7 @@ services:
     depends_on:
       - postgres
     labels:
-     - 'com.microsoft.acs.dcos.marathon.vhost' : ' 'www.example.com' 
+     - 'com.microsoft.acs.dcos.marathon.vhost' :  'www.example.com' 
   postgres:
     # Build database using Dockerfile contained in postgres subfolder
     build: ./postgres
