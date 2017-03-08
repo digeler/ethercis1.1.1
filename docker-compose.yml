@@ -3,8 +3,7 @@ version: "2"
 services:
 
   app:
-    labels:
-       com.microsoft.acs.dcos.marathon.vhost: "myexample.com"
+    
     # Build application using Dockerfile contained in application subfolder
     build: ./application
     # Name image
