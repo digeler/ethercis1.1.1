@@ -6,7 +6,7 @@ services:
     
     # Build application using Dockerfile contained in application subfolder
     labels:
-      com.microsoft.acs.dcos.marathon.vhost : "myexample.com"
+      com.microsoft.acs.dcos.marathon.vhost : "myexample.com:8080"
     build: ./application
     # Name image
     image: ethercis-app
