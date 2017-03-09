@@ -12,7 +12,7 @@ services:
     ports:
       - "8080:8080"
       labels:
-       - HAPROXY_GROUP: "external"
+        'com.microsoft.acs.dcos.marathon.vhost' : 'www.example.com' 
     # Do not start application container until postgres service is started
     depends_on:
       - postgres
