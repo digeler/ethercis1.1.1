@@ -12,7 +12,7 @@ services:
     ports:
       - "8080:8080"
       labels:
-        HAPROXY_GROUP: "external"
+       - HAPROXY_GROUP: "external"
     # Do not start application container until postgres service is started
     depends_on:
       - postgres
