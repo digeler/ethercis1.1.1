@@ -24,7 +24,7 @@ services:
     # Name image
     image: ethercis-db
     volumes:
-      - /data:/data/postgres
+       /data:/data/postgres
 
     ports:
       - "5432:5432"
