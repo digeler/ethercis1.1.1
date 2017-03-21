@@ -11,11 +11,11 @@ services:
       - "8080:8080"
   postgres: 
     build: ./postgres
+    constraint: "hostname:LIKE:10.32.0.6"
     environment: 
       POSTGRES_DB: ethercis
       POSTGRES_PASSWORD: postgres
       POSTGRES_USER: postgres
-      constraint: hostname:LIKE:10.32.0.6
     image: ethercis-db
     labels: 
       com.microsoft.acs.dcos.marathon.healthcheck: "true"
