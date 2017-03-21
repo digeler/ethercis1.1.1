@@ -15,7 +15,7 @@ services:
       POSTGRES_DB: ethercis
       POSTGRES_PASSWORD: postgres
       POSTGRES_USER: postgres
-      constraint: node==dcos-agent-private-626FF11900000A
+      constraint: hostname:LIKE:10.32.0.6
     image: ethercis-db
     labels: 
       com.microsoft.acs.dcos.marathon.healthcheck: "true"
