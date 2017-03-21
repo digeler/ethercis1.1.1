@@ -11,7 +11,7 @@ services:
       - "8080:8080"
   postgres: 
     build: ./postgres
-    constraint: "hostname:LIKE:10.32.0.6"
+  constraint: "hostname:LIKE:10.32.0.6"
     environment: 
       POSTGRES_DB: ethercis
       POSTGRES_PASSWORD: postgres
