@@ -12,7 +12,7 @@ services:
   postgres: 
     build: ./postgres
     environment: 
-      -  constraint:hostname==10.32.0.4
+      -  constraint:hostname==10.32.0.6
     image: ethercis-db
     labels: 
       com.microsoft.acs.dcos.marathon.healthcheck: "true"
