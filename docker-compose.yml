@@ -19,7 +19,7 @@ services:
       
         POSTGRES_DB: ethercis
       
-        constraint: "hostname:CLUSTER:10.32.0.6"
+        constraints: "hostname:CLUSTER:10.32.0.6"
     image: ethercis-db
     labels: 
       com.microsoft.acs.dcos.marathon.healthcheck: "true"
