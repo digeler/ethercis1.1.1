@@ -12,19 +12,18 @@ services:
   postgres: 
     build: ./postgres
     environment: 
-      - 
+      
         POSTGRES_USER: postgres
-      - 
+      
         POSTGRES_PASSWORD: postgres
-      - 
+      
         POSTGRES_DB: ethercis
-      - 
+      
         constraint: "hostname:CLUSTER:10.32.0.6"
     image: ethercis-db
     labels: 
       com.microsoft.acs.dcos.marathon.healthcheck: "true"
-      ? "constraint:node"
-      : =node-1
+     
     ports: 
       - "5432:5432"
     volumes: 
