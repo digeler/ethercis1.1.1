@@ -25,7 +25,7 @@ services:
     build: ./postgres
     labels:
       com.microsoft.acs.dcos.marathon.healthcheck: "true"
-      "constraints": [["hostname","CLUSTER","10.32.0.5"]]
+      
   
     # Name image
     image: ethercis-db
@@ -37,6 +37,7 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: ethercis
+      constraints: [["hostname","CLUSTER","10.32.0.5"]]
       
     ports:
       - "5432:5432"
