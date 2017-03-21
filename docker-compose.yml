@@ -14,7 +14,7 @@ services:
     environment: 
       -  constraint:hostname==10.32.0.6
       -  POSTGRES_USER: postgres
-      -   POSTGRES_PASSWORD: postgres
+      -  POSTGRES_PASSWORD: postgres
       
         POSTGRES_DB: ethercis
     image: ethercis-db
