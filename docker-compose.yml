@@ -1,28 +1,42 @@
---- 
-services: 
-  app: 
-    build: ./application
-    depends_on: 
-      - postgres
-    image: ethercis-app
-    labels: 
-      com.microsoft.acs.dcos.marathon.healthcheck: "true"
-    ports: 
-      - "8080:8080"
-  postgres: 
-    build: ./postgres
-    environment: 
-       - constraint:hostname==10.32.0.6       
-       - POSTGRES_USER: "postgres"       
-       - POSTGRES_DB: "ethercis"
-       - POSTGRES_PASSWORD: "postgres"
-    image: ethercis-db
-    labels: 
-      com.microsoft.acs.dcos.marathon.healthcheck: "true"
-    ports: 
-      - "5432:5432"
-    volumes: 
-      - ".data:/var/lib/postgresql/data"
 version: "2"
-volumes: 
-  data: ~
+
+#Definition of PostgreSQL data volume
+volumes:
+  data:
+
+services:
+
+  app:
+    # Build application using Dockerfile contained in application subfolder
+    build: ./application
+    # Name image
+    image: ethercis-app
+    # Map application container port 8080 to Docker port 8080
+    labels:
+      com.microsoft.acs.dcos.marathon.healthcheck: "true"
+    ports:
+      - "8080:8080"
+    # Do not start application container until postgres service is started
+    depends_on:
+      - postgres
+
+  postgres:
+    # Build database using Dockerfile contained in postgres subfolder
+    build: ./postgres
+    labels:
+      com.microsoft.acs.dcos.marathon.healthcheck: "true"
+      constraint:node: "=node-1"
+    # Name image
+    image: ethercis-db
+    #Volume for PostreSQL data
+    volumes:
+      - .data:/var/lib/postgresql/data
+    #Environment variables configuring Postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: ethercis
+      constraint:hostname: "=10.32.0.6"
+    ports:
+      - "5432:5432"
+    
