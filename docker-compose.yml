@@ -13,9 +13,9 @@ services:
     build: ./postgres
     environment: 
        - constraint:hostname==10.32.0.6       
-       - POSTGRES_USER: postgres       
-       - POSTGRES_DB: ethercis
-       - POSTGRES_PASSWORD: postgres
+       - POSTGRES_USER: "postgres"       
+       - POSTGRES_DB: "ethercis"
+       - POSTGRES_PASSWORD: "postgres"
     image: ethercis-db
     labels: 
       com.microsoft.acs.dcos.marathon.healthcheck: "true"
