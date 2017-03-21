@@ -25,13 +25,8 @@ services:
     build: ./postgres
     labels:
       com.microsoft.acs.dcos.marathon.healthcheck: "true"
-      "constraints": [
-    [
-      "hostname",
-      "CLUSTER",
-      "10.32.0.5"
-    ]
-  ],
+      "constraints": [["hostname","CLUSTER","10.32.0.5"]]
+  
     # Name image
     image: ethercis-db
     #Volume for PostreSQL data
