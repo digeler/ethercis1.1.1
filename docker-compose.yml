@@ -37,7 +37,7 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: ethercis
-      
+      "constraint:host==10.32.0.4"
       
     ports:
       - "5432:5432"
