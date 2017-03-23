@@ -8,7 +8,7 @@ services:
 
   #app:
     # Build application using Dockerfile contained in application subfolder
-    build: ./application
+  #  build: ./application
     # Name image
    # image: ethercis-app
     # Map application container port 8080 to Docker port 8080
